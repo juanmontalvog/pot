@@ -1,0 +1,696 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="9fa8b7c2-31b5-4620-b0aa-482a32d4b5ad" activeEnvironment="Default" name="WSProxy" resourceRoot="" soapui-version="5.7.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="049133c5-4835-4531-a3c8-e229ca788215" wsaVersion="NONE" name="CalculatorSoap12" type="wsdl" bindingName="{http://www.datapower.com/extensions/http://schemas.xmlsoap.org/wsdl/soap/}CalculatorSoap12" soapVersion="1_1" anonymous="optional" definition="http://localhost:8080/calculator.asmx?WSDL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8080/calculator.asmx?WSDL"><con:part><con:url>http://localhost:8080/calculator.asmx?WSDL</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp200409="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsp200607="http://www.w3.org/2006/07/ws-policy" xmlns:ns0="http://tempuri.org/" xmlns:ns1="http://www.datapower.com/extensions/http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns2="http://www.datapower.com/extensions/http://schemas.xmlsoap.org/wsdl/soap12/">
+  <wsdl:import location="calculator.asmx?ns1.wsdl" namespace="http://www.datapower.com/extensions/http://schemas.xmlsoap.org/wsdl/soap/"/>
+  <wsdl:import location="calculator.asmx?ns2.wsdl" namespace="http://www.datapower.com/extensions/http://schemas.xmlsoap.org/wsdl/soap12/"/>
+  <wsdl:types xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:schema>
+      <xsd:import schemaLocation="calculator.asmx.xsd1.xsd" namespace="http://tempuri.org/"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="AddSoapIn">
+    <wsdl:part name="parameters" element="xsns:Add" xmlns:xsns="http://tempuri.org/"/>
+  </wsdl:message>
+  <wsdl:message name="AddSoapOut">
+    <wsdl:part name="parameters" element="xsns:AddResponse" xmlns:xsns="http://tempuri.org/"/>
+  </wsdl:message>
+  <wsdl:message name="DivideSoapIn">
+    <wsdl:part name="parameters" element="xsns:Divide" xmlns:xsns="http://tempuri.org/"/>
+  </wsdl:message>
+  <wsdl:message name="DivideSoapOut">
+    <wsdl:part name="parameters" element="xsns:DivideResponse" xmlns:xsns="http://tempuri.org/"/>
+  </wsdl:message>
+  <wsdl:message name="MultiplySoapIn">
+    <wsdl:part name="parameters" element="xsns:Multiply" xmlns:xsns="http://tempuri.org/"/>
+  </wsdl:message>
+  <wsdl:message name="MultiplySoapOut">
+    <wsdl:part name="parameters" element="xsns:MultiplyResponse" xmlns:xsns="http://tempuri.org/"/>
+  </wsdl:message>
+  <wsdl:message name="SubtractSoapIn">
+    <wsdl:part name="parameters" element="xsns:Subtract" xmlns:xsns="http://tempuri.org/"/>
+  </wsdl:message>
+  <wsdl:message name="SubtractSoapOut">
+    <wsdl:part name="parameters" element="xsns:SubtractResponse" xmlns:xsns="http://tempuri.org/"/>
+  </wsdl:message>
+  <wsdl:portType name="CalculatorSoap">
+    <wsdl:operation name="Add">
+      <wsdl:input name="AddRequest" message="ns0:AddSoapIn"/>
+      <wsdl:output name="AddResponse" message="ns0:AddSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="Divide">
+      <wsdl:input name="DivideRequest" message="ns0:DivideSoapIn"/>
+      <wsdl:output name="DivideResponse" message="ns0:DivideSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="Multiply">
+      <wsdl:input name="MultiplyRequest" message="ns0:MultiplySoapIn"/>
+      <wsdl:output name="MultiplyResponse" message="ns0:MultiplySoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="Subtract">
+      <wsdl:input name="SubtractRequest" message="ns0:SubtractSoapIn"/>
+      <wsdl:output name="SubtractResponse" message="ns0:SubtractSoapOut"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CalculatorSoap" type="ns0:CalculatorSoap">
+    <soap11:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="Add">
+      <soap11:operation soapAction="http://tempuri.org/Add" style="document"/>
+      <wsdl:input name="AddRequest">
+        <soap11:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="AddResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Divide">
+      <soap11:operation soapAction="http://tempuri.org/Divide" style="document"/>
+      <wsdl:input name="DivideRequest">
+        <soap11:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="DivideResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Multiply">
+      <soap11:operation soapAction="http://tempuri.org/Multiply" style="document"/>
+      <wsdl:input name="MultiplyRequest">
+        <soap11:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="MultiplyResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Subtract">
+      <soap11:operation soapAction="http://tempuri.org/Subtract" style="document"/>
+      <wsdl:input name="SubtractRequest">
+        <soap11:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="SubtractResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CalculatorSoap12" type="ns0:CalculatorSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="Add">
+      <soap12:operation soapAction="http://tempuri.org/Add" soapActionRequired="false" style="document"/>
+      <wsdl:input name="AddRequest">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="AddResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Divide">
+      <soap12:operation soapAction="http://tempuri.org/Divide" soapActionRequired="false" style="document"/>
+      <wsdl:input name="DivideRequest">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="DivideResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Multiply">
+      <soap12:operation soapAction="http://tempuri.org/Multiply" soapActionRequired="false" style="document"/>
+      <wsdl:input name="MultiplyRequest">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="MultiplyResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Subtract">
+      <soap12:operation soapAction="http://tempuri.org/Subtract" soapActionRequired="false" style="document"/>
+      <wsdl:input name="SubtractRequest">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="SubtractResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Calculator">
+    <wsdl:port name="CalculatorSoap" binding="ns0:CalculatorSoap">
+      <soap11:address location="http://172.17.0.2:8080/calculator.asmx"/>
+    </wsdl:port>
+    <wsdl:port name="CalculatorSoap.0" binding="ns2:CalculatorSoap">
+      <soap12:address location="http://172.17.0.2:8080/calculator.asmx"/>
+    </wsdl:port>
+    <wsdl:port name="CalculatorSoap12" binding="ns0:CalculatorSoap12">
+      <soap12:address location="http://172.17.0.2:8080/calculator.asmx"/>
+    </wsdl:port>
+    <wsdl:port name="CalculatorSoap12.0" binding="ns1:CalculatorSoap12">
+      <soap11:address location="http://172.17.0.2:8080/calculator.asmx"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://localhost:8080/calculator.asmx?ns1.wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://www.datapower.com/extensions/http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp200409="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsp200607="http://www.w3.org/2006/07/ws-policy" xmlns:ns0="http://tempuri.org/" xmlns:ns1="http://www.datapower.com/extensions/http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns2="http://www.datapower.com/extensions/http://schemas.xmlsoap.org/wsdl/soap12/">
+  <wsdl:binding name="CalculatorSoap12" type="ns0:CalculatorSoap">
+    <soap11:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="Add">
+      <soap11:operation soapAction="http://tempuri.org/Add" style="document"/>
+      <wsdl:input name="AddRequest">
+        <soap11:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="AddResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Divide">
+      <soap11:operation soapAction="http://tempuri.org/Divide" style="document"/>
+      <wsdl:input name="DivideRequest">
+        <soap11:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="DivideResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Multiply">
+      <soap11:operation soapAction="http://tempuri.org/Multiply" style="document"/>
+      <wsdl:input name="MultiplyRequest">
+        <soap11:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="MultiplyResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Subtract">
+      <soap11:operation soapAction="http://tempuri.org/Subtract" style="document"/>
+      <wsdl:input name="SubtractRequest">
+        <soap11:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="SubtractResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://localhost:8080/calculator.asmx?ns2.wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://www.datapower.com/extensions/http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp200409="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsp200607="http://www.w3.org/2006/07/ws-policy" xmlns:ns0="http://tempuri.org/" xmlns:ns1="http://www.datapower.com/extensions/http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns2="http://www.datapower.com/extensions/http://schemas.xmlsoap.org/wsdl/soap12/">
+  <wsdl:binding name="CalculatorSoap" type="ns0:CalculatorSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="Add">
+      <soap12:operation soapAction="http://tempuri.org/Add" soapActionRequired="true" style="document"/>
+      <wsdl:input name="AddRequest">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="AddResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Divide">
+      <soap12:operation soapAction="http://tempuri.org/Divide" soapActionRequired="true" style="document"/>
+      <wsdl:input name="DivideRequest">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="DivideResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Multiply">
+      <soap12:operation soapAction="http://tempuri.org/Multiply" soapActionRequired="true" style="document"/>
+      <wsdl:input name="MultiplyRequest">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="MultiplyResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Subtract">
+      <soap12:operation soapAction="http://tempuri.org/Subtract" soapActionRequired="true" style="document"/>
+      <wsdl:input name="SubtractRequest">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="SubtractResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://localhost:8080/calculator.asmx.xsd1.xsd</con:url><con:content><![CDATA[<s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <s:element name="Add">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="1" maxOccurs="1" name="intA" type="s:int"/>
+        <s:element minOccurs="1" maxOccurs="1" name="intB" type="s:int"/>
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="AddResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="1" maxOccurs="1" name="AddResult" type="s:int"/>
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="Subtract">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="1" maxOccurs="1" name="intA" type="s:int"/>
+        <s:element minOccurs="1" maxOccurs="1" name="intB" type="s:int"/>
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="SubtractResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="1" maxOccurs="1" name="SubtractResult" type="s:int"/>
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="Multiply">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="1" maxOccurs="1" name="intA" type="s:int"/>
+        <s:element minOccurs="1" maxOccurs="1" name="intB" type="s:int"/>
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="MultiplyResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="1" maxOccurs="1" name="MultiplyResult" type="s:int"/>
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="Divide">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="1" maxOccurs="1" name="intA" type="s:int"/>
+        <s:element minOccurs="1" maxOccurs="1" name="intB" type="s:int"/>
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="DivideResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="1" maxOccurs="1" name="DivideResult" type="s:int"/>
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+</s:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://172.17.0.2:8080/calculator.asmx</con:endpoint></con:endpoints><con:operation id="9017cd45-1035-43d2-939f-f689d8947377" isOneWay="false" action="http://tempuri.org/Add" name="Add" bindingOperationName="Add" type="Request-Response" outputName="AddResponse" inputName="AddRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="25190151-8343-4712-bd26-d531146be97f" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://172.17.0.2:8080/calculator.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:Add>
+         <tem:intA>?</tem:intA>
+         <tem:intB>?</tem:intB>
+      </tem:Add>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/Add"/></con:call><con:call id="ed0c270a-c84a-40ef-803b-30429c709075" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://172.17.0.2:8080/calculator.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:Add>
+         <tem:intA>?</tem:intA>
+         <tem:intB>?</tem:intB>
+      </tem:Add>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/Add"/></con:call></con:operation><con:operation id="ec10a862-830a-4039-b8b4-5ba57ad92230" isOneWay="false" action="http://tempuri.org/Divide" name="Divide" bindingOperationName="Divide" type="Request-Response" outputName="DivideResponse" inputName="DivideRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="ae5bf602-cb87-4dc7-9cee-6f768174c514" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://172.17.0.2:8080/calculator.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:Divide>
+         <tem:intA>?</tem:intA>
+         <tem:intB>?</tem:intB>
+      </tem:Divide>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/Divide"/></con:call><con:call id="d752f2a4-7d8a-4257-8a6f-eed2a758bf2e" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://172.17.0.2:8080/calculator.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:Divide>
+         <tem:intA>?</tem:intA>
+         <tem:intB>?</tem:intB>
+      </tem:Divide>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/Divide"/></con:call></con:operation><con:operation id="bf5b7b94-c218-450d-8641-bec237e51559" isOneWay="false" action="http://tempuri.org/Multiply" name="Multiply" bindingOperationName="Multiply" type="Request-Response" outputName="MultiplyResponse" inputName="MultiplyRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="64112ecd-56c9-42d2-bf47-6fa8fb72653b" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://172.17.0.2:8080/calculator.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:Multiply>
+         <tem:intA>?</tem:intA>
+         <tem:intB>?</tem:intB>
+      </tem:Multiply>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/Multiply"/></con:call><con:call id="cad871b9-56c3-46bb-8acf-7c58ff49df3d" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://172.17.0.2:8080/calculator.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:Multiply>
+         <tem:intA>?</tem:intA>
+         <tem:intB>?</tem:intB>
+      </tem:Multiply>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/Multiply"/></con:call></con:operation><con:operation id="6a88e29a-b1ae-4ef3-b62d-f3dd4bb7e693" isOneWay="false" action="http://tempuri.org/Subtract" name="Subtract" bindingOperationName="Subtract" type="Request-Response" outputName="SubtractResponse" inputName="SubtractRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="c8d67661-d1db-40bf-b6d3-ff265c856b76" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://172.17.0.2:8080/calculator.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:Subtract>
+         <tem:intA>?</tem:intA>
+         <tem:intB>?</tem:intB>
+      </tem:Subtract>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/Subtract"/></con:call><con:call id="db9a80f3-eb28-4e4d-89a4-80c1757ddf18" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://172.17.0.2:8080/calculator.asmx</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">
+   <soapenv:Header/>
+   <soapenv:Body>
+      <tem:Subtract>
+         <tem:intA>?</tem:intA>
+         <tem:intB>?</tem:intB>
+      </tem:Subtract>
+   </soapenv:Body>
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/Subtract"/></con:call></con:operation></con:interface><con:interface xsi:type="con:WsdlInterface" id="84133379-2d86-4486-a939-a7910ceb287a" wsaVersion="NONE" name="CalculatorSoap" type="wsdl" bindingName="{http://www.datapower.com/extensions/http://schemas.xmlsoap.org/wsdl/soap12/}CalculatorSoap" soapVersion="1_2" anonymous="optional" definition="http://localhost:8080/calculator.asmx?WSDL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:8080/calculator.asmx?WSDL"><con:part><con:url>http://localhost:8080/calculator.asmx?WSDL</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp200409="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsp200607="http://www.w3.org/2006/07/ws-policy" xmlns:ns0="http://tempuri.org/" xmlns:ns1="http://www.datapower.com/extensions/http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns2="http://www.datapower.com/extensions/http://schemas.xmlsoap.org/wsdl/soap12/">
+  <wsdl:import location="calculator.asmx?ns1.wsdl" namespace="http://www.datapower.com/extensions/http://schemas.xmlsoap.org/wsdl/soap/"/>
+  <wsdl:import location="calculator.asmx?ns2.wsdl" namespace="http://www.datapower.com/extensions/http://schemas.xmlsoap.org/wsdl/soap12/"/>
+  <wsdl:types xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:schema>
+      <xsd:import schemaLocation="calculator.asmx.xsd1.xsd" namespace="http://tempuri.org/"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="AddSoapIn">
+    <wsdl:part name="parameters" element="xsns:Add" xmlns:xsns="http://tempuri.org/"/>
+  </wsdl:message>
+  <wsdl:message name="AddSoapOut">
+    <wsdl:part name="parameters" element="xsns:AddResponse" xmlns:xsns="http://tempuri.org/"/>
+  </wsdl:message>
+  <wsdl:message name="DivideSoapIn">
+    <wsdl:part name="parameters" element="xsns:Divide" xmlns:xsns="http://tempuri.org/"/>
+  </wsdl:message>
+  <wsdl:message name="DivideSoapOut">
+    <wsdl:part name="parameters" element="xsns:DivideResponse" xmlns:xsns="http://tempuri.org/"/>
+  </wsdl:message>
+  <wsdl:message name="MultiplySoapIn">
+    <wsdl:part name="parameters" element="xsns:Multiply" xmlns:xsns="http://tempuri.org/"/>
+  </wsdl:message>
+  <wsdl:message name="MultiplySoapOut">
+    <wsdl:part name="parameters" element="xsns:MultiplyResponse" xmlns:xsns="http://tempuri.org/"/>
+  </wsdl:message>
+  <wsdl:message name="SubtractSoapIn">
+    <wsdl:part name="parameters" element="xsns:Subtract" xmlns:xsns="http://tempuri.org/"/>
+  </wsdl:message>
+  <wsdl:message name="SubtractSoapOut">
+    <wsdl:part name="parameters" element="xsns:SubtractResponse" xmlns:xsns="http://tempuri.org/"/>
+  </wsdl:message>
+  <wsdl:portType name="CalculatorSoap">
+    <wsdl:operation name="Add">
+      <wsdl:input name="AddRequest" message="ns0:AddSoapIn"/>
+      <wsdl:output name="AddResponse" message="ns0:AddSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="Divide">
+      <wsdl:input name="DivideRequest" message="ns0:DivideSoapIn"/>
+      <wsdl:output name="DivideResponse" message="ns0:DivideSoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="Multiply">
+      <wsdl:input name="MultiplyRequest" message="ns0:MultiplySoapIn"/>
+      <wsdl:output name="MultiplyResponse" message="ns0:MultiplySoapOut"/>
+    </wsdl:operation>
+    <wsdl:operation name="Subtract">
+      <wsdl:input name="SubtractRequest" message="ns0:SubtractSoapIn"/>
+      <wsdl:output name="SubtractResponse" message="ns0:SubtractSoapOut"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CalculatorSoap" type="ns0:CalculatorSoap">
+    <soap11:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="Add">
+      <soap11:operation soapAction="http://tempuri.org/Add" style="document"/>
+      <wsdl:input name="AddRequest">
+        <soap11:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="AddResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Divide">
+      <soap11:operation soapAction="http://tempuri.org/Divide" style="document"/>
+      <wsdl:input name="DivideRequest">
+        <soap11:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="DivideResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Multiply">
+      <soap11:operation soapAction="http://tempuri.org/Multiply" style="document"/>
+      <wsdl:input name="MultiplyRequest">
+        <soap11:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="MultiplyResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Subtract">
+      <soap11:operation soapAction="http://tempuri.org/Subtract" style="document"/>
+      <wsdl:input name="SubtractRequest">
+        <soap11:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="SubtractResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="CalculatorSoap12" type="ns0:CalculatorSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="Add">
+      <soap12:operation soapAction="http://tempuri.org/Add" soapActionRequired="false" style="document"/>
+      <wsdl:input name="AddRequest">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="AddResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Divide">
+      <soap12:operation soapAction="http://tempuri.org/Divide" soapActionRequired="false" style="document"/>
+      <wsdl:input name="DivideRequest">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="DivideResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Multiply">
+      <soap12:operation soapAction="http://tempuri.org/Multiply" soapActionRequired="false" style="document"/>
+      <wsdl:input name="MultiplyRequest">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="MultiplyResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Subtract">
+      <soap12:operation soapAction="http://tempuri.org/Subtract" soapActionRequired="false" style="document"/>
+      <wsdl:input name="SubtractRequest">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="SubtractResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Calculator">
+    <wsdl:port name="CalculatorSoap" binding="ns0:CalculatorSoap">
+      <soap11:address location="http://172.17.0.2:8080/calculator.asmx"/>
+    </wsdl:port>
+    <wsdl:port name="CalculatorSoap.0" binding="ns2:CalculatorSoap">
+      <soap12:address location="http://172.17.0.2:8080/calculator.asmx"/>
+    </wsdl:port>
+    <wsdl:port name="CalculatorSoap12" binding="ns0:CalculatorSoap12">
+      <soap12:address location="http://172.17.0.2:8080/calculator.asmx"/>
+    </wsdl:port>
+    <wsdl:port name="CalculatorSoap12.0" binding="ns1:CalculatorSoap12">
+      <soap11:address location="http://172.17.0.2:8080/calculator.asmx"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://localhost:8080/calculator.asmx?ns1.wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://www.datapower.com/extensions/http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp200409="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsp200607="http://www.w3.org/2006/07/ws-policy" xmlns:ns0="http://tempuri.org/" xmlns:ns1="http://www.datapower.com/extensions/http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns2="http://www.datapower.com/extensions/http://schemas.xmlsoap.org/wsdl/soap12/">
+  <wsdl:binding name="CalculatorSoap12" type="ns0:CalculatorSoap">
+    <soap11:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="Add">
+      <soap11:operation soapAction="http://tempuri.org/Add" style="document"/>
+      <wsdl:input name="AddRequest">
+        <soap11:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="AddResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Divide">
+      <soap11:operation soapAction="http://tempuri.org/Divide" style="document"/>
+      <wsdl:input name="DivideRequest">
+        <soap11:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="DivideResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Multiply">
+      <soap11:operation soapAction="http://tempuri.org/Multiply" style="document"/>
+      <wsdl:input name="MultiplyRequest">
+        <soap11:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="MultiplyResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Subtract">
+      <soap11:operation soapAction="http://tempuri.org/Subtract" style="document"/>
+      <wsdl:input name="SubtractRequest">
+        <soap11:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="SubtractResponse">
+        <soap11:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://localhost:8080/calculator.asmx?ns2.wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://www.datapower.com/extensions/http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap11="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp200409="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsp200607="http://www.w3.org/2006/07/ws-policy" xmlns:ns0="http://tempuri.org/" xmlns:ns1="http://www.datapower.com/extensions/http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns2="http://www.datapower.com/extensions/http://schemas.xmlsoap.org/wsdl/soap12/">
+  <wsdl:binding name="CalculatorSoap" type="ns0:CalculatorSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <wsdl:operation name="Add">
+      <soap12:operation soapAction="http://tempuri.org/Add" soapActionRequired="true" style="document"/>
+      <wsdl:input name="AddRequest">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="AddResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Divide">
+      <soap12:operation soapAction="http://tempuri.org/Divide" soapActionRequired="true" style="document"/>
+      <wsdl:input name="DivideRequest">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="DivideResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Multiply">
+      <soap12:operation soapAction="http://tempuri.org/Multiply" soapActionRequired="true" style="document"/>
+      <wsdl:input name="MultiplyRequest">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="MultiplyResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Subtract">
+      <soap12:operation soapAction="http://tempuri.org/Subtract" soapActionRequired="true" style="document"/>
+      <wsdl:input name="SubtractRequest">
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="SubtractResponse">
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part><con:part><con:url>http://localhost:8080/calculator.asmx.xsd1.xsd</con:url><con:content><![CDATA[<s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <s:element name="Add">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="1" maxOccurs="1" name="intA" type="s:int"/>
+        <s:element minOccurs="1" maxOccurs="1" name="intB" type="s:int"/>
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="AddResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="1" maxOccurs="1" name="AddResult" type="s:int"/>
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="Subtract">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="1" maxOccurs="1" name="intA" type="s:int"/>
+        <s:element minOccurs="1" maxOccurs="1" name="intB" type="s:int"/>
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="SubtractResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="1" maxOccurs="1" name="SubtractResult" type="s:int"/>
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="Multiply">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="1" maxOccurs="1" name="intA" type="s:int"/>
+        <s:element minOccurs="1" maxOccurs="1" name="intB" type="s:int"/>
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="MultiplyResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="1" maxOccurs="1" name="MultiplyResult" type="s:int"/>
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="Divide">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="1" maxOccurs="1" name="intA" type="s:int"/>
+        <s:element minOccurs="1" maxOccurs="1" name="intB" type="s:int"/>
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+  <s:element name="DivideResponse">
+    <s:complexType>
+      <s:sequence>
+        <s:element minOccurs="1" maxOccurs="1" name="DivideResult" type="s:int"/>
+      </s:sequence>
+    </s:complexType>
+  </s:element>
+</s:schema>]]></con:content><con:type>http://www.w3.org/2001/XMLSchema</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://172.17.0.2:8080/calculator.asmx</con:endpoint></con:endpoints><con:operation id="07826f22-a5ea-4128-b281-a10820795291" isOneWay="false" action="http://tempuri.org/Add" name="Add" bindingOperationName="Add" type="Request-Response" outputName="AddResponse" inputName="AddRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="0975d286-4fc8-4710-825e-0e81376055c6" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:8080/calculator.asmx</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/">
+   <soap:Header/>
+   <soap:Body>
+      <tem:Add>
+         <tem:intA>5</tem:intA>
+         <tem:intB>6</tem:intB>
+      </tem:Add>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/CalculatorSoap/AddRequest"/><con:wsrmConfig version="1.2"/></con:call><con:call id="89498523-7bfe-4078-a242-491ff3028744" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://172.17.0.2:8080/calculator.asmx</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/">
+   <soap:Header/>
+   <soap:Body>
+      <tem:Add>
+         <tem:intA>?</tem:intA>
+         <tem:intB>?</tem:intB>
+      </tem:Add>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/CalculatorSoap/AddRequest"/></con:call></con:operation><con:operation id="93ce6072-0c0b-4999-867c-57feb132acad" isOneWay="false" action="http://tempuri.org/Divide" name="Divide" bindingOperationName="Divide" type="Request-Response" outputName="DivideResponse" inputName="DivideRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="fabcadcb-900c-4661-b0fd-e6ee7020749a" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://172.17.0.2:8080/calculator.asmx</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/">
+   <soap:Header/>
+   <soap:Body>
+      <tem:Divide>
+         <tem:intA>?</tem:intA>
+         <tem:intB>?</tem:intB>
+      </tem:Divide>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/CalculatorSoap/DivideRequest"/></con:call><con:call id="d734ff49-01a6-48e6-9560-89ca329baa57" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://172.17.0.2:8080/calculator.asmx</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/">
+   <soap:Header/>
+   <soap:Body>
+      <tem:Divide>
+         <tem:intA>?</tem:intA>
+         <tem:intB>?</tem:intB>
+      </tem:Divide>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/CalculatorSoap/DivideRequest"/></con:call></con:operation><con:operation id="2b316c11-95c7-42cf-8a8c-7f98f1f851c8" isOneWay="false" action="http://tempuri.org/Multiply" name="Multiply" bindingOperationName="Multiply" type="Request-Response" outputName="MultiplyResponse" inputName="MultiplyRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="d78d4acb-e64a-4c90-91be-3a8d5f286016" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://172.17.0.2:8080/calculator.asmx</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/">
+   <soap:Header/>
+   <soap:Body>
+      <tem:Multiply>
+         <tem:intA>?</tem:intA>
+         <tem:intB>?</tem:intB>
+      </tem:Multiply>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/CalculatorSoap/MultiplyRequest"/></con:call><con:call id="fa4b76aa-bf71-4f38-87e2-dfdb9651ff94" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://172.17.0.2:8080/calculator.asmx</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/">
+   <soap:Header/>
+   <soap:Body>
+      <tem:Multiply>
+         <tem:intA>?</tem:intA>
+         <tem:intB>?</tem:intB>
+      </tem:Multiply>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/CalculatorSoap/MultiplyRequest"/></con:call></con:operation><con:operation id="1d54bbc6-1c8d-4b42-bd3a-bacaa78b39bb" isOneWay="false" action="http://tempuri.org/Subtract" name="Subtract" bindingOperationName="Subtract" type="Request-Response" outputName="SubtractResponse" inputName="SubtractRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="88d4cc20-77ca-4f0e-a1df-51e91e227c94" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://172.17.0.2:8080/calculator.asmx</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/">
+   <soap:Header/>
+   <soap:Body>
+      <tem:Subtract>
+         <tem:intA>?</tem:intA>
+         <tem:intB>?</tem:intB>
+      </tem:Subtract>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/CalculatorSoap/SubtractRequest"/></con:call><con:call id="a8e6a45c-15c9-4d9a-9bf5-bf5f865af4d3" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>http://172.17.0.2:8080/calculator.asmx</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:soap="http://www.w3.org/2003/05/soap-envelope" xmlns:tem="http://tempuri.org/">
+   <soap:Header/>
+   <soap:Body>
+      <tem:Subtract>
+         <tem:intA>?</tem:intA>
+         <tem:intB>?</tem:intB>
+      </tem:Subtract>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/CalculatorSoap/SubtractRequest"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>

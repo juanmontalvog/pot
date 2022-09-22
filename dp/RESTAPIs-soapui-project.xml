@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="ff04647e-f8b8-47f6-a0ae-7924131310db" activeEnvironment="Default" name="RESTAPIs" resourceRoot="" soapui-version="5.7.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:RestService" id="b1194b5d-354c-43ef-8444-321a4e7f81de" wadlVersion="http://wadl.dev.java.net/2009/02" name="http://localhost:8443" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart=""/><con:endpoints><con:endpoint>http://localhost:8443</con:endpoint></con:endpoints><con:resource name="" path="" id="94e51fed-7441-412a-b63e-f62b6c2ff9c0"><con:settings/><con:parameters/><con:method name="1" id="d8ec20a1-743a-4f01-a876-e93c91d4bc6b" method="POST"><con:settings/><con:parameters/><con:representation type="RESPONSE"><con:mediaType>text/xml</con:mediaType><con:status>200</con:status><con:params/><con:element xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">soapenv:Envelope</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/xml</con:mediaType><con:params/><con:element xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">soapenv:Envelope</con:element></con:representation><con:representation type="FAULT"><con:mediaType>text/xml</con:mediaType><con:status>500</con:status><con:params/><con:element xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/">soapenv:Envelope</con:element></con:representation><con:request name="verify" id="497cde84-cc31-49a8-880e-1cfc02c19bc4" mediaType="application/xml" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://localhost:8443/verify</con:endpoint><con:request><![CDATA[<?xml version="1.0" encoding="UTF-8"?>
+<soap:Envelope soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"><soap:Header>
+		<wsse:Security soap:mustUnderstand="1"><wsse:UsernameToken>
+				<wsse:Username>david</wsse:Username>
+				<wsse:Password>foobar</wsse:Password>
+			</wsse:UsernameToken><wsu:Timestamp wsu:Id="Timestamp-7159968d-25ff-40c5-8156-dd6e3d73206d" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"><wsu:Created>2022-09-22T01:19:12Z</wsu:Created><wsu:Expires>2022-09-22T01:24:12Z</wsu:Expires></wsu:Timestamp><wsse:BinarySecurityToken wsu:Id="SecurityToken-0ed3bd26-b3ce-4088-bdd7-dd6e3d73b01a" EncodingType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary" ValueType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509v3" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">MIIECDCCAvCgAwIBAgIIMRJDQOWyeG0wDQYJKoZIhvcNAQELBQAwXDELMAkGA1UEBhMCTVgxCzAJBgNVBAgMAk5MMQwwCgYDVQQHDANNVFkxDDAKBgNVBAoMA1laQTEUMBIGA1UECwwLSW50ZWdyYWNpb24xDjAMBgNVBAMMBWRwcG90MB4XDTIyMDkxNTE3MTIwMloXDTIzMDkxNTE3MTIwMlowXDELMAkGA1UEBhMCTVgxCzAJBgNVBAgMAk5MMQwwCgYDVQQHDANNVFkxDDAKBgNVBAoMA1laQTEUMBIGA1UECwwLSW50ZWdyYWNpb24xDjAMBgNVBAMMBWRwcG90MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAsEBYJwwHCrpVRvmg+5A7TAl5mhFcW4re5iZiG7XKcuIOeldvWgoqF50eCPkGEwl7R15M/tE0ydRKmVQG/ajlwAKZ/wOTrRfMcFD6WDqikBGBrT/rE1FOHE7sczzvhOaqA76ZXvVFE/3TtTHQuPiUzuOugd2ZtrYvx0k89UTavMDgGxTfpn0+sU7Fq5oDZim4RsbPf7ZlajlbD0j4kciYfCpzdn+QJqvDiGtyfboZi6LFc0WSMugsHMXfArYPEejPkcJMW/BteHMZyVJQ8UnOShoFKH9CrEPYjvUKrAAqMajdRtdF6dp7AJCPa6tt7VB1lzESRFWuyAi5Lc1/wJ/4TwIDAQABo4HNMIHKMAwGA1UdEwQFMAMBAf8wHQYDVR0OBBYEFNMBgSf04xT0yW6XDr/veNy2kjtpMIGNBgNVHSMEgYUwgYKAFNMBgSf04xT0yW6XDr/veNy2kjtpoWCkXjBcMQswCQYDVQQGEwJNWDELMAkGA1UECAwCTkwxDDAKBgNVBAcMA01UWTEMMAoGA1UECgwDWVpBMRQwEgYDVQQLDAtJbnRlZ3JhY2lvbjEOMAwGA1UEAwwFZHBwb3SCCDESQ0DlsnhtMAsGA1UdDwQEAwICvDANBgkqhkiG9w0BAQsFAAOCAQEAg6/2MrkiQdrlUVDLH7A9Pylnb3c8UzJWhbdOTNkA7SzukkJOYezLXxUdxuR9VDRNtTGiESwteKNoVypyY1nPZZ5sYkzFSeRCjBOtwVcx0WsLS0sBM2Zv2NAoBkldDtzzvzmQOrBIAMIk5JkULsFwrJazOrCNYViujFTjggmsNZkwasf9fXblTpSBRXS6VRFAu5agZ25c2pKFVXIlLS/rGSpryHNAFaaDR2UH0ridxsakbC94Fum7/Od+6oIUHqBQTkXv+Lo98rmWl2u9MZe1hb9wpFh3tO7IDkYiOyrleE4faLBAr+yo8UfWv59psS0BfT6qGJuM/SXXKzCNPR+dNg==</wsse:BinarySecurityToken><Signature xmlns="http://www.w3.org/2000/09/xmldsig#">
+<SignedInfo>
+  <CanonicalizationMethod Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+  <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+  <Reference URI="#Timestamp-7159968d-25ff-40c5-8156-dd6e3d73206d">
+    <Transforms>
+      <Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+    </Transforms>
+    <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+    <DigestValue>fu0o7galqxtyubYp4vNSeDyMGtY=</DigestValue>
+  </Reference>
+  <Reference URI="#Body-45c8a583-a09c-46a7-bfe1-dd6e3d7322ef">
+    <Transforms>
+      <Transform Algorithm="http://www.w3.org/2001/10/xml-exc-c14n#"/>
+    </Transforms>
+    <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+    <DigestValue>m+nRqreP52t7mazQCN6P5co+SyY=</DigestValue>
+  </Reference>
+</SignedInfo>
+    <SignatureValue>oY5MSuahQyoRt1MPEpszTcjd4B8y/APu4OscRm80D4kkZK7Y1LHoEqLL/LY6rRln5lHtoTkWs6o+G38dSB+zWtVvCaf2/tWCsjWkNIE3yZWvNesCgWxjT1aaGrnBdBoErnXaz7Srew6+3R1ZUMSDZX4dMeCfHNjKt5QQpnR0jGVQlwqWpnVz33QreBEUON0naixuIq3mM+6q2KguD6LpFvgQcs8PM+WHskuDVq8KzboBzhk8dA3z29Rfjag7RXrwygyDxWaX6BYxuxjL/Q0XGbAc8wVtgTs43uBzWqpR1PKmgGohCffcJlWMO6WFG0PlSjhRP0ao9PMWiChJ3e2JPA==</SignatureValue><KeyInfo><wsse:SecurityTokenReference xmlns=""><wsse:Reference URI="#SecurityToken-0ed3bd26-b3ce-4088-bdd7-dd6e3d73b01a" ValueType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509v3"/></wsse:SecurityTokenReference></KeyInfo></Signature></wsse:Security>
+	</soap:Header><soap:Body wsu:Id="Body-45c8a583-a09c-46a7-bfe1-dd6e3d7322ef" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+		<product-info>
+			<product-id>XI50</product-id>
+			<brand>WebSphere DataPower</brand>
+			<encoded-description>SUJNIFdlYlNwaGVyZSBEYXRhUG93ZXIgWEk1MCBTT0EgQXBwbGlhbmNl</encoded-description>
+			<benefits>Security;Integration;Performance</benefits>
+		</product-info>
+	</soap:Body></soap:Envelope>]]></con:request><con:originalUri>http://localhost/</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request><con:request name="transform" id="497cde84-cc31-49a8-880e-1cfc02c19bc4" mediaType="application/xml" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://localhost:8443/transform</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"
+	xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"
+	soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+	<soap:Header>
+		<wsse:Security>
+			<wsse:UsernameToken>
+				<wsse:Username>david</wsse:Username>
+				<wsse:Password>foobar</wsse:Password>
+			</wsse:UsernameToken>
+		</wsse:Security>
+	</soap:Header>
+	<soap:Body>
+		<product-info>
+			<product-id>XI50</product-id>
+			<brand>WebSphere DataPower</brand>
+			<encoded-description>SUJNIFdlYlNwaGVyZSBEYXRhUG93ZXIgWEk1MCBTT0EgQXBwbGlhbmNl</encoded-description>
+			<benefits>Security;Integration;Performance</benefits>
+		</product-info>
+	</soap:Body>
+</soap:Envelope>]]></con:request><con:originalUri>http://localhost/</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request><con:request name="sign" id="497cde84-cc31-49a8-880e-1cfc02c19bc4" mediaType="application/xml" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://localhost:8443/sign</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"
+	xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"
+	soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+	<soap:Header>
+		<wsse:Security>
+			<wsse:UsernameToken>
+				<wsse:Username>david</wsse:Username>
+				<wsse:Password>foobar</wsse:Password>
+			</wsse:UsernameToken>
+		</wsse:Security>
+	</soap:Header>
+	<soap:Body>
+		<product-info>
+			<product-id>XI50</product-id>
+			<brand>WebSphere DataPower</brand>
+			<encoded-description>SUJNIFdlYlNwaGVyZSBEYXRhUG93ZXIgWEk1MCBTT0EgQXBwbGlhbmNl</encoded-description>
+			<benefits>Security;Integration;Performance</benefits>
+		</product-info>
+	</soap:Body>
+</soap:Envelope>]]></con:request><con:originalUri>http://localhost/</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request><con:request name="validate" id="497cde84-cc31-49a8-880e-1cfc02c19bc4" mediaType="application/xml" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://localhost:8443/validate</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"
+	xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"
+	soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+	<soap:Header>
+		<wsse:Security>
+			<wsse:UsernameToken>
+				<wsse:Username>david</wsse:Username>
+				<wsse:Password>foobar</wsse:Password>
+			</wsse:UsernameToken>
+		</wsse:Security>
+	</soap:Header>
+	<soap:Body>
+		<product-info>
+			<product-id>XI50</product-id>
+			<brand>WebSphere DataPower</brand>
+			<encoded-description>SUJNIFdlYlNwaGVyZSBEYXRhUG93ZXIgWEk1MCBTT0EgQXBwbGlhbmNl</encoded-description>
+			<benefits>Security;Integration;Performance</benefits>
+		</product-info>
+	</soap:Body>
+</soap:Envelope>]]></con:request><con:originalUri>http://localhost/</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request><con:request name="encrypt" id="497cde84-cc31-49a8-880e-1cfc02c19bc4" mediaType="application/xml" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://localhost:8443/encrypt</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"
+	xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"
+	soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+	<soap:Header>
+		<wsse:Security>
+			<wsse:UsernameToken>
+				<wsse:Username>david</wsse:Username>
+				<wsse:Password>foobar</wsse:Password>
+			</wsse:UsernameToken>
+		</wsse:Security>
+	</soap:Header>
+	<soap:Body>
+		<product-info>
+			<product-id>XI50</product-id>
+			<brand>WebSphere DataPower</brand>
+			<encoded-description>SUJNIFdlYlNwaGVyZSBEYXRhUG93ZXIgWEk1MCBTT0EgQXBwbGlhbmNl</encoded-description>
+			<benefits>Security;Integration;Performance</benefits>
+		</product-info>
+	</soap:Body>
+</soap:Envelope>]]></con:request><con:originalUri>http://localhost/</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request><con:request name="decrypt" id="497cde84-cc31-49a8-880e-1cfc02c19bc4" mediaType="application/xml" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://localhost:8443/decrypt</con:endpoint><con:request><![CDATA[<soap:Envelope soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd">
+   <soap:Header>
+      <wsse:Security soap:mustUnderstand="1">
+         <xenc:EncryptedKey xmlns:xenc="http://www.w3.org/2001/04/xmlenc#">
+            <xenc:EncryptionMethod Algorithm="http://www.w3.org/2001/04/xmlenc#rsa-1_5" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#"/>
+            <dsig:KeyInfo xmlns:dsig="http://www.w3.org/2000/09/xmldsig#">
+               <wsse:SecurityTokenReference>
+                  <wsse:KeyIdentifier ValueType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-x509-token-profile-1.0#X509SubjectKeyIdentifier" EncodingType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary">0wGBJ/TjFPTJbpcOv+943LaSO2k=</wsse:KeyIdentifier>
+               </wsse:SecurityTokenReference>
+            </dsig:KeyInfo>
+            <xenc:CipherData xmlns:dsig="http://www.w3.org/2000/09/xmldsig#">
+               <xenc:CipherValue>cUlojdBrjEdr/v3fhBj3nfYNK+7vNHn54QnYiGOB4l7SSKDx0jkOf2Du9g+8uudsiCbonbraOF2WS2qpt37UWXoeN4X64kMVqb807UVlEQUA2CiEGCh5phqxCepohgzgpqqpw8RydJryg23xJGrDgNvtGwMrVONtV9iBuVv3+VQ6stTY/tXMh9XmjS0YaH+65QQ7AvvhCVm6aowYGtihCzmYmy5+C7/2JiW1JzxjmHvfV2rHbShfoTfT/0kEs8072cK1ALC6m6mZFhwZd4/gUpth+wzk4uP/v225tWHlMPYinnq8nIxPrJcCHok0RjQuMXJKKST7g5BAXtZckxj8Hw==</xenc:CipherValue>
+            </xenc:CipherData>
+            <xenc:ReferenceList>
+               <xenc:DataReference URI="#body"/>
+            </xenc:ReferenceList>
+         </xenc:EncryptedKey>
+         <wsse:UsernameToken>
+            <wsse:Username>david</wsse:Username>
+            <wsse:Password>foobar</wsse:Password>
+         </wsse:UsernameToken>
+      </wsse:Security>
+   </soap:Header>
+   <soap:Body>
+      <xenc:EncryptedData Id="body" Type="http://www.w3.org/2001/04/xmlenc#Content" xmlns:xenc="http://www.w3.org/2001/04/xmlenc#">
+         <xenc:EncryptionMethod Algorithm="http://www.w3.org/2001/04/xmlenc#tripledes-cbc"/>
+         <xenc:CipherData>
+            <xenc:CipherValue>1pshpwBTBzlkRM+1xnBwucpAHCKSJPgNUdkTBqOifttCw/0ubNvnuuUp6y2MKpUK42eqPh2/xalMtO2buUpCtVzI1VPuFjkEbb0tuRglq4Uw6yUsH1FfbCx4fQY55l7v9QVTNeDF2GHnY3Lfg6vQSYFk4EqUgp4RatY07nc7oXKCTjlsCWTZivIQYhj2EPQacAzUvk0XKsz2TtlH6vbghv84tua6yhHCNv2vxT2UT/hfVG9ql99TpTJhAJW/MxNKsryFnnK8xNzZl81YGZXvrRx7lDRAbjXFMzobRlX3NeH3aR8vkgbbdj6RwchQYoSKeMOQ0br7UsKtBl82NV7rWH84mWkxkA4Nv5qMFMF+SwUSd0amm70wLpydjX9yENaoLstX05gQkVgKodR5QIE2yCsxr0Yt8v9rkTmcn19STTJqbnodTV59iPtFdW7yHGuDml2XQvgzYKZZ4MaAobDkw718LEBAMOK7lFDSLRJmE0fjAletI8PRGGM46z6mlrYn44dJssB4FXk1ayJYgTLIR6QyL79RcW2ZUovUdroZc5PEdC+ytsx/mxCC/DwlLWONGctwViU0/R/dxQEKNBRMysgn/30Xcwe5YIM9o/l/WF+n0U34yESUgqq+0kF6CNJ3eNoT4/4UlD7btER0RGt5OQ==</xenc:CipherValue>
+         </xenc:CipherData>
+      </xenc:EncryptedData>
+   </soap:Body>
+</soap:Envelope>]]></con:request><con:originalUri>http://localhost/</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request><con:request name="auth" id="497cde84-cc31-49a8-880e-1cfc02c19bc4" mediaType="application/xml" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:endpoint>http://localhost:8443/auth</con:endpoint><con:request><![CDATA[<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"
+	xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd"
+	soap:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+	<soap:Header>
+		<wsse:Security>
+			<wsse:UsernameToken>
+				<wsse:Username>david</wsse:Username>
+				<wsse:Password>foobars</wsse:Password>
+			</wsse:UsernameToken>
+		</wsse:Security>
+	</soap:Header>
+	<soap:Body>
+		<product-info>
+			<product-id>XI50</product-id>
+			<brand>WebSphere DataPower</brand>
+			<encoded-description>SUJNIFdlYlNwaGVyZSBEYXRhUG93ZXIgWEk1MCBTT0EgQXBwbGlhbmNl</encoded-description>
+			<benefits>Security;Integration;Performance</benefits>
+		</product-info>
+	</soap:Body>
+</soap:Envelope>]]></con:request><con:originalUri>http://localhost/</con:originalUri><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
