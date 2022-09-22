@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="product-info">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="product-id">
+                    <xs:simpleType>
+                        <xs:restriction base="xs:string">
+                            <xs:enumeration value="XA35"/>
+                            <xs:enumeration value="XS40"/>
+			    <xs:enumeration value="XI50"/>
+			    <xs:enumeration value="XB60"/>
+                            <xs:enumeration value="XM70"/>
+                        </xs:restriction>
+                    </xs:simpleType>
+                </xs:element>
+                <xs:element name="brand" type="xs:string"/>
+                <xs:element name="encoded-description" type="xs:string"/>
+                <xs:element name="benefits" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
